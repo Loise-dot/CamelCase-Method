@@ -14,14 +14,34 @@ For instance:
 
 ## BDD (Behavior Driven Development)
 
-## PseudoCode:
+# Scenario 1:
 
-Define a function named mergeStrings that takes two string parameters str1 and str2
-Loop through str1 in reverse order, starting from the last character and going backwards until the first character is reached.
-For each iteration, extract a suffix of str1 starting from the current character position using substring method. Store it in a variable named suffix.
-Check if str2 starts with suffix using startsWith method. If it does, then append the remaining part of str2 after suffix to str1 using substring method and return the resulting string.
-If str2 doesn't start with suffix, continue to loop through str1 until the end is reached.
-If the loop ends and no overlap is found, concatenate str1 and str2 together using the + operator and return the resulting string.
+Given a string with multiple words
+When the camelCase method is called on the string
+Then return a new string with all words concatenated and the first letter of each word capitalized without spaces
+
+Example 1:
+Given: "hello case"
+When: camelCase method is called on the string
+Then: Return "HelloCase"
+
+Example 2:
+Given: "camel case word"
+When: camelCase method is called on the string
+Then: Return "CamelCaseWord"
+
+Example 3:
+Given: "lowercase"
+When: camelCase method is called on the string
+Then: Return "Lowercase"
+
+## PseudoCode
+
+-Define a camelCase method on the String prototype
+-Inside the camelCase method, split the string into an array of words using split method and store it in a variable words
+-Loop through each word in words using map method
+-Inside the loop, capitalize the first letter of the word using charAt method and toUpperCase method and -concatenate it with the rest of the word using slice method. Return the capitalized word.
+-Join the capitalized words in the words array into a new string using join method and return it.
 
 ## Code
 
